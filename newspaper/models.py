@@ -1,17 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-
-class Redactor(AbstractUser):
-    years_of_experience = models.IntegerField()
-
-    class Meta:
-        ordering = ["username"]
-        verbose_name = "redactor"
-        verbose_name_plural = "redactors"
-
-    def __str__(self) -> str:
-        return f"{self.username}: {self.first_name} {self.last_name}"
+from django.urls import reverse
 
 
 class Topic(models.Model):
@@ -22,6 +11,21 @@ class Topic(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Redactor(AbstractUser):
+    years_of_experience = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ["username"]
+        verbose_name = "redactor"
+        verbose_name_plural = "redactors"
+
+    def __str__(self) -> str:
+        return f"{self.username}: {self.first_name} {self.last_name}"
+
+    def get_absolute_url(self):
+        return reverse("newspaper:redactors-detail", kwargs={"pk": self.pk})
 
 
 class Newspaper(models.Model):
