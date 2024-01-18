@@ -1,13 +1,53 @@
-{% extends "base.html" %}
+{% extends 'layouts/base.html' %}
 {% load crispy_forms_filters %}
 
-{% block content %}
-  <h1>{{ object|yesno:"Update,Create" }} topic</h1>
-  <form action="" method="post" novalidate>
-    {% csrf_token %}
-    {{ form|crispy }}
+{% block title %} Contact US {% endblock title %}
 
-    <input type="submit" value="Submit" class="btn btn-success">
-    <a href="{% url 'newspaper:topics-list' %}" class="btn btn-primary">Cancel</a>
-  </form>
-{% endblock %}
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} contact-us {% endblock body_class %}
+
+{% block content %}
+
+  {% include "includes/navigation-light.html" %}
+
+  <header>
+    <div class="page-header section-height-85">
+      <div>
+        <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0" 
+             src="{{ ASSETS_ROOT }}/img/newspapers.jpg">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 d-flex justify-content-center flex-column">
+            <div class="card d-flex blur justify-content-center p-4 shadow-lg my-sm-0 my-sm-6 mt-8 mb-5">
+              <div class="text-center">
+                <h3 class="text-gradient text-primary">{{ object|yesno:"Update,Create" }} topic</h3>
+                <p class="mb-0">
+                  Please add all necessary information
+                </p>
+              </div>
+              <form role="form" id="contact-form" method="post" autocomplete="off">
+                  {% csrf_token %}
+                  {{ form|crispy }}
+                      <div class="col-md-12 d-flex justify-content-between">
+                    <input type="submit" value="Create topic" class="btn btn-success">
+                    
+                    <div class="col-md-3 text-right">
+                      <a class="btn btn-danger" href="{% url 'newspaper:topics-list' %}">
+                      Cancel
+                    </a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% endblock content %}
