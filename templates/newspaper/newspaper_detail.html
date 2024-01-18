@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Newspaper detail {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} blog-author bg-gray-100 {% endblock body_class %}
+
+{% block content %}
+
+  {% include "includes/navigation-light.html" %}
+
+  <section class="py-sm-7 py-5 position-relative">
+    <div class="page-header section-height-85">
+        <div>
+          <img class="position-absolute fixed-top ms-auto w-45 h-100 z-index-0 
+        d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 
+        border-top-start-radius-0 border-bottom-end-radius-0" src="{{ ASSETS_ROOT }}/img/TNY.jpg" alt="">
+        </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mx-auto">
+            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h1 class="mb-0">
+                  Title: {{ newspaper.title }}
+                  <br>
+                    <a class="btn bg-gradient-danger text-white mt-3 mb-0" 
+                       href="{% url 'newspaper:newspaper-delete' pk=newspaper.id %}">
+                      Delete
+                    </a>
+                    
+                    <a class="btn bg-gradient-success mt-3 mb-0" 
+                       href="{% url 'newspaper:newspaper-update' pk=newspaper.id %}">
+                      Update
+                    </a>
+                </h1>
+              </div>
+              <p class="text-lg mb-0">
+                <h2>Content:</h2> {{ newspaper.content }}
+                <br><a href="javascript:" class="text-info icon-move-right">More
+                    <i class="fas fa-arrow-right text-sm ms-1"></i>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+  <section class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="mb-5">
+            <h1>List of redactors:</h1>
+              {% if newspaper in user.newspapers.all %}
+                <a href="{% url 'newspaper:assign-redactor' pk=newspaper.id %}" 
+                   class="btn btn-danger link-to-page">
+                  Delete me from this newspaper
+                </a>
+              {% else %}
+                <a href="{% url 'newspaper:assign-redactor' pk=newspaper.id %}" 
+                   class="btn btn-success link-to-page">
+                  Assign me to this newspaper
+                </a>
+              {% endif %}
+                <hr>
+              {% for redactor in newspaper.publishers.all %}
+                <li>{{ redactor.username }} ({{ redactor.first_name }} {{ first_name.last }})</li>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <div class="card card-plain card-blog">
+            <div class="card-image border-radius-lg position-relative">
+            </div>
+            <div class="card-body px-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="{{ ASSETS_ROOT }}/js/soft-design-system.min.js?v=1.0.1" type="text/javascript"></script>
+
+{% endblock javascripts %}
