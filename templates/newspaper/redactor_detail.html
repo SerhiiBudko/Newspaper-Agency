@@ -10,57 +10,57 @@
 {% block content %}
 
   {% include "includes/navigation-light.html" %}
-
-  <div class="py-sm-7 py-5 position-relative">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 mx-auto">
-          <div class="row py-lg-7 py-5">
-            <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <h4 class="mb-0">
-                  Username: {{ redactor.username }}
-                  <br>
-                  {{ redactor.first_name }} {{ redactor.last_name }}
-                  <p>Years of experience: {{ redactor.years_of_experience }}</p>
-                </h4>
+  
+    <div class="py-sm-7 py-5 position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 mx-auto">
+            <div class="row py-lg-7 py-5">
+              <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mt-sm-0 mt-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h4 class="mb-2">
+                    Username: {{ redactor.username }}
+                    <br>
+                    First name: {{ redactor.first_name }}
+                    <br>
+                    Last name: {{ redactor.last_name }}
+                    <p>Years of experience: {{ redactor.years_of_experience }}</p>
+                  </h4>
               
-                <div class="d-block">
-                  <a href="{% url 'newspaper:redactors-delete' pk=redactor.id %}" 
-                     class="btn btn-sm btn-outline-info text-nowrap mb-0">
-                    Delete
-                  </a>
+                  <div class="d-block">
+                    <a href="{% url 'newspaper:redactors-delete' pk=redactor.id %}" 
+                       class="btn btn-sm btn-outline-info text-nowrap mb-0">Delete
+                    </a>
                 
-                  <a href="{% url 'newspaper:redactors-update' pk=redactor.id %}" 
-                     class="btn btn-sm btn-outline-info text-nowrap mb-0">
-                    Update redactor`s info
-                  </a>
+                    <a href="{% url 'newspaper:redactors-update' pk=redactor.id %}"
+                       class="btn btn-sm btn-outline-info text-nowrap mb-0">  Update redactor`s info
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              <div class="ml-3">
-                <h4>Newspapers</h4>
-                {% if newspapers_list %}
-                  <ul>
-                    {% for newspaper in newspapers_list %}
-                      <li>
-                        <p><strong>Title:</strong> {{ newspaper.title }}</p>
-                        <p><strong>Content:</strong> {{ newspaper.content }}</p>
-                        <p><strong>Published date:</strong> {{ newspaper.published_date }}</p>
-                        <p class="text-muted"><strong>Id:</strong> {{ newspaper.id }}</p>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                {% else %}
-                  <p>There are no newspapers in the list</p>
-                {% endif %}
+                <div class="ml-3">
+                  <h4>Newspapers</h4>
+                  {% if newspapers_list %}
+                    <ul>
+                      {% for newspaper in newspapers_list %}
+                        <li>
+                          <p><strong>Title:</strong> {{ newspaper.title }}</p>
+                          <p><strong>Content:</strong> {{ newspaper.content }}</p>
+                          <p><strong>Published date:</strong> {{ newspaper.published_date }}</p>
+                          <p class="text-muted"><strong>Id:</strong> {{ newspaper.id }}</p>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% else %}
+                    <p>There are no newspapers in the list</p>
+                  {% endif %}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 {% endblock content %}
 
 

@@ -15,8 +15,9 @@
   <header>
     <div class="page-header section-height-85">
       <div>
-        <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 border-top-start-radius-0 border-bottom-end-radius-0" 
-             src="{{ ASSETS_ROOT }}/img/newspapers.jpg">
+        <img class="position-absolute fixed-top ms-auto w-50 h-100 z-index-0 
+        d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 
+        border-top-start-radius-0 border-bottom-end-radius-0" src="{{ ASSETS_ROOT }}/img/newspapers.jpg" alt="">
       </div>
       <div class="container">
         <div class="row">
@@ -25,7 +26,7 @@
               <div class="text-center">
                 <h3 class="text-gradient text-primary">{{ object|yesno:"Update,Create" }} newspaper</h3>
                 <p class="mb-0">
-                  Please add all necessary information
+                  Please, add all necessary information
                 </p>
               </div>
               <form role="form" id="contact-form" method="post" autocomplete="off">
@@ -33,10 +34,16 @@
                   {{ form|crispy }}
                 <div class="card-body pb-2">
                     <div class="col-md-12 d-flex justify-content-between">
-                      <button type="submit" class="btn bg-gradient-success mt-3 mb-0">{{ object|yesno:"Update,Create" }} newspaper</button>
+                      <button 
+                          type="submit" 
+                          class="btn bg-gradient-success mt-3 mb-0">
+                        {{ object|yesno:"Update,Create" }} newspaper
+                      </button>
                     
                     <div class="col-md-3 text-right">
-                      <a class="btn bg-gradient-danger mt-3 mb-0" href="{% url 'newspaper:newspaper-list' %}">Cancel</a>
+                      <a class="btn bg-gradient-danger mt-3 mb-0" 
+                         href="{% url 'newspaper:newspaper-list' %}">Cancel
+                      </a>
                     </div>
                   </div>
                 </div>
