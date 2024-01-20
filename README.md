@@ -12,8 +12,8 @@ A quick introduction of the setup you need to get running project.
 
 ```shell
 First step: Clone the repositoriry;
-Second step: open terminal on your PC; inside the terminal choose the directory, where to safe project`s file, use following code:
-"cd path/to/your/directory" -> git clone + "cloned link";
+Second step: open terminal on your PC; inside the terminal choose the directory, 
+where to safe projects file, use following code: "cd path/to/your/directory" -> git clone + "cloned link";
 Third step: open the project in your preferred IDE;
 Fourth step: create a venv(Virtual Environment) and activate it;
 Fifth step: Install project dependencies, use the command: "pip install -r requirements.txt";
