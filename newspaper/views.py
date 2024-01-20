@@ -5,8 +5,8 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from .models import Topic, Redactor, Newspaper
-from .forms import (
+from newspaper.models import Topic, Redactor, Newspaper
+from newspaper.forms import (
     NewspaperForm,
     RedactorCreationForm,
     RedactorUpdateForm,
@@ -166,7 +166,7 @@ def assign_redactor_to_newspaper(request, pk):
     redactor = Redactor.objects.get(id=request.user.id)
     if (
         Newspaper.objects.get(id=pk) in redactor.newspapers.all()
-    ):  # probably could check if car exists
+    ):
         redactor.newspapers.remove(pk)
     else:
         redactor.newspapers.add(pk)

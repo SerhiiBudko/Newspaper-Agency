@@ -18,8 +18,6 @@ class Redactor(AbstractUser):
 
     class Meta:
         ordering = ["username"]
-        verbose_name = "redactor"
-        verbose_name_plural = "redactors"
 
     def __str__(self) -> str:
         return f"{self.username}: {self.first_name} {self.last_name}"
@@ -34,7 +32,8 @@ class Newspaper(models.Model):
     published_date = models.DateTimeField(auto_now=True)
     topic = models.ForeignKey(
         Topic,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="topics"
     )
     publishers = models.ManyToManyField(
         Redactor,

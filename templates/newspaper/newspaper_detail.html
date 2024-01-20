@@ -42,6 +42,10 @@
                 <br><a href="javascript:" class="text-info icon-move-right">More
                     <i class="fas fa-arrow-right text-sm ms-1"></i>
                   </a>
+                <h2>Topics:</h2>
+              {% for topic in newspaper.topic.all %}
+                <li>{{ newspaper.topic.name }}</li>
+              {% endfor %}
             </div>
           </div>
         </div>

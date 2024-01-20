@@ -1,6 +1,6 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %} About US {% endblock title %}
+{% block title %} Newspapers List {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -68,7 +68,7 @@
             <a href="{% url "newspaper:newspaper-detail" pk=newspaper.id %}">{{ newspaper.id }}</a>
           </td>
           <td>{{ newspaper.title }}</td>
-          <td>{{ newspaper.topic.name }}</td>
+          <td>{{ newspaper.topics.name }}</td>
         </tr>
         {% endfor %}
   {% else %}

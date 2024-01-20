@@ -3,7 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
 
-from .models import Redactor, Newspaper
+from newspaper.models import Redactor, Newspaper
 
 
 class NewspaperForm(forms.ModelForm):
