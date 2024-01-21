@@ -8,7 +8,7 @@ from newspaper.models import Topic, Newspaper
 class TopicModelTests(TestCase):
     def test_topic_str(self):
         topic = Topic.objects.create(
-            name="test_name"
+            name="test"
         )
         self.assertEqual(
             str(topic),
