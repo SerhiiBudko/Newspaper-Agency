@@ -48,7 +48,7 @@ of use by both experienced and new users.
 The system promotes efficiency and reduces the likelihood of errors in tracking assignments.
 
 #### Screenshots
-![Photo1](static/assets/img/illustrations/1.png)
+![Photo1](static/assets/Снимок экрана 2024-01-21 в 15.49.43.png)
 ![Photo2](static/assets/img/illustrations/2.png)
 ![Photo3](static/assets/img/illustrations/3.png)
 ![Photo4](static/assets/img/illustrations/4.png)
