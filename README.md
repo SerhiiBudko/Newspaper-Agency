@@ -1,4 +1,6 @@
-# Newspaper Agency System
+# Newspaper Agency System (NAS) - Overview
+
+## Introduction
 
 Welcome to the Newspaper Agency System (NAS)! 
 We understand the importance of keeping track of the talented individuals who contribute 
@@ -6,23 +8,36 @@ to the creation of each newspaper.
 This README file provides essential information on NAS, a system designed to streamline 
 the tracking of redactors assigned to newspapers, ensuring accurate attribution and accountability.
 
-## Installing / Getting started
+## Getting started
 
-A quick introduction of the setup you need to get running project.
+Follow these steps to set up and run the NAS project on your local machine:
 
-```shell
-First step: Clone the repositoriry;
-Second step: open terminal on your PC; inside the terminal choose the directory, 
-where to safe projects file, use following code: "cd path/to/your/directory" -> git clone + "cloned link";
-Third step: open the project in your preferred IDE;
-Fourth step: create a venv(Virtual Environment) and activate it;
-Fifth step: Install project dependencies, use the command: "pip install -r requirements.txt";
-Sixth step: create a superuser by code: "python manage.py createsuperuser";
-Seventh step: run the development server by code: "python manage.py runserver". You will get the link to the server;
-Eighth step: Open your browser and navigate to http://127.0.0.1:8000/ to check and use the server.
-```
 
-## Features
+1. **Clone the Repository:**
+   ```bash
+   git clone [repository_link]
+2. **Navigate to Project Directory:**
+    ```bash
+   cd path/to/your/directory
+3. Open Project in IDE:
+Open the project in your preferred Integrated Development Environment (IDE).
+4. **Create and Activate Virtual Environment:**
+    ```bash
+   python -m venv venv
+   source venv/bin/activate
+5. **Install Dependencies:**
+   ```bash
+    pip install -r requirements.txt
+6. **Create Superuser:**
+    ```bash
+    python manage.py createsuperuser
+7.  **Run Development Server:**
+    ```bash
+    python manage.py runserver
+8. Access the Server:
+Open your web browser and go to http://127.0.0.1:8000/ to check and use the server.
+
+### Features
 
 Redactor Assignment Tracking: NAS allows you to efficiently assign redactors to specific newspapers. 
 This feature ensures that every newspaper publication is associated with the responsible team members. 
@@ -32,3 +47,9 @@ User-friendly Interface: NAS boasts an intuitive and user-friendly interface, de
 of use by both experienced and new users. 
 The system promotes efficiency and reduces the likelihood of errors in tracking assignments.
 
+#### Screenshots
+![Photo1](static/assets/img/illustrations/1.png)
+![Photo2](static/assets/img/illustrations/2.png)
+![Photo3](static/assets/img/illustrations/3.png)
+![Photo4](static/assets/img/illustrations/4.png)
+![Photo5](static/assets/img/illustrations/5.png)
