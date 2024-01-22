@@ -48,8 +48,8 @@ of use by both experienced and new users.
 The system promotes efficiency and reduces the likelihood of errors in tracking assignments.
 
 #### Screenshots
-![Photo1](1.png)
-![Photo2](2.png)
-![Photo3](3.png)
-![Photo4](4.png)
-![Photo5](5.png)
+![Photo1](static/assets/1.png)
+![Photo2](static/assets/2.png)
+![Photo3](static/assets/3.png)
+![Photo4](static/assets/4.png)
+![Photo5](static/assets/5.png)
