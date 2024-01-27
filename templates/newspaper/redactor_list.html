@@ -1,17 +1,16 @@
 {% extends 'layouts/base.html' %}
 
-{% block title %} About US {% endblock title %}
+{% block title %} Redactor's list {% endblock title %}
 
 
 {% block stylesheets %}{% endblock stylesheets %}
 
-{% block body_class %} about-us {% endblock body_class %}
+{% block body_class %} Redactor's list {% endblock body_class %}
 
 {% block content %}
 
   {% include "includes/navigation-transparent.html" %}
   {% load crispy_forms_filters %}
-
 
   <header class="bg-gradient-dark">
     <div class="page-header section-height-75" style="background-image: url('{{ ASSETS_ROOT }}/img/redactors.jpeg');">
@@ -20,14 +19,12 @@
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center mx-auto my-auto">
             <h1 class="text-white">List of redactors</h1>
-            <p class="lead mb-4 text-white opacity-8">We’re constantly trying to express ourselves and actualize our dreams.
-              If you have the opportunity to play this game. You can create a new redactor on this page.
+            <p class="lead mb-4 text-white opacity-8">You can create a new redactor on this page.
             </p>
             <a type="submit" 
                href="{% url 'newspaper:redactors-create' %}" 
                class="btn bg-white text-dark">Create Redactor
             </a>
-            
           </div>
         </div>
       </div>

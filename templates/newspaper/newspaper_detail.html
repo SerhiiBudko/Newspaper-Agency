@@ -14,7 +14,7 @@
   <section class="py-sm-7 py-5 position-relative">
     <div class="page-header section-height-85">
         <div>
-          <img class="position-absolute fixed-top ms-auto w-45 h-100 z-index-0 
+          <img class="position-absolute fixed-top ms-auto w-45 h-100 z-index-0
         d-none d-sm-none d-md-block border-radius-section border-top-end-radius-0 
         border-top-start-radius-0 border-bottom-end-radius-0" src="{{ ASSETS_ROOT }}/img/TNY.jpg" alt="">
         </div>
@@ -37,7 +37,7 @@
                     </a>
                 </h1>
               </div>
-              <p class="text-lg mb-0">
+              <p style="max-width: 800px; margin: 0 auto;">
                 <h2>Content:</h2> {{ newspaper.content }}
                 <br><a href="javascript:" class="text-info icon-move-right">More
                     <i class="fas fa-arrow-right text-sm ms-1"></i>
@@ -52,11 +52,11 @@
       </div>
   </div>
   </section>
-  <section class="py-3">
+  <section class="py-1">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
-          <div class="mb-5">
+          <div class="mb-1">
             <h1>List of redactors:</h1>
               {% if newspaper in user.newspapers.all %}
                 <a href="{% url 'newspaper:assign-redactor' pk=newspaper.id %}" 
