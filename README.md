@@ -6,8 +6,8 @@ Newspaper Agency project deployed to Render - https://newspaper-agency-xeqq.onre
 ### Login for test
 **You can login and check functionality of the project using test_user:**
    ```bash
-   username:test_user
-   password:12345678
+username:test_user
+password:12345678
 
 ## Introduction
 
