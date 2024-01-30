@@ -64,7 +64,6 @@ DATABASES = {
     }
 }
 
-
 dv_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(dv_from_env)
 
