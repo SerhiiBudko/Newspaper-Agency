@@ -4,7 +4,7 @@
 
 {% block stylesheets %}{% endblock stylesheets %}
 
-{% block body_class %} about-us {% endblock body_class %}
+{% block body_class %} topic_list {% endblock body_class %}
 
 {% block content %}
 
@@ -50,7 +50,7 @@
     {{ search_field|crispy }}
     <input class="btn bg-white text-dark" type="submit" value="🔍">
   </form>
-
+  
   {% if topics_list %}
     <table class="table">
       <tr>
