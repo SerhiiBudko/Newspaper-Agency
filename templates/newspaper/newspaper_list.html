@@ -5,7 +5,7 @@
 
 {% block stylesheets %}{% endblock stylesheets %}
 
-{% block body_class %} about-us {% endblock body_class %}
+{% block body_class %}{% endblock body_class %}
 
 {% block content %}
 
@@ -50,7 +50,6 @@
   <form action="" method="get" class="form-inline">
     {{ search_field|crispy }}
     <input class="btn bg-gradient-faded-secondary text-dark" type="submit" value="🔍">
-  
   </form>
   
   {% if newspaper_list %}
