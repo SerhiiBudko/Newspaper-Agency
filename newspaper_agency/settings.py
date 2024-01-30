@@ -9,7 +9,7 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 DEBUG = "RENDER" not in os.environ
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["127.0.0.1", "newspaper-agency-xeqq.onrender.com"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
