@@ -34,8 +34,9 @@
                   {% csrf_token %}
                   {{ form|crispy }}
                       <div class="col-md-12 d-flex justify-content-between">
-                        <input type="submit" value="Create topic" class="btn btn-success">
-                        
+                        <button type="submit" class="btn bg-gradient-success mt-3 mb-0">
+                          {{ object|yesno:"Update,Create" }} topic
+                        </button>
                         <div class="col-md-3 text-right">
                           <a class="btn btn-danger" href="{% url 'newspaper:topics-list' %}">Cancel</a>
                         </div>
